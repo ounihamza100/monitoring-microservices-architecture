@@ -1,0 +1,20 @@
+<configuration>
+
+    <appender name="kafka_rest_proxy" class="com.dashboard.appenders.KafkaRestProxyAppender">
+        <filter class="com.dashboard.appenders.KafkaRestProxyFilter">
+            <basePackage>com.dashboard</basePackage>
+        </filter>
+        <KafkaRestProxyConfiguration>
+            <host>localhost</host>
+            <port>8082</port>
+            <topic>errors</topic>
+        </KafkaRestProxyConfiguration>
+    </appender>
+    <root>
+        <appender-ref ref="kafka_rest_proxy"/>
+    </root>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="org.springframework.web" level="ERROR"/>
+    <logger name="com.dashboard" level="DEBUG"/>
+
+</configuration>
