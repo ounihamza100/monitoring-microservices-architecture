@@ -1,16 +1,25 @@
 package com.dashboard;
 
+import com.dashboard.entities.EurekaClientsLastMetadata;
+import com.dashboard.mapper.EurekaClientsMetadataMapper;
+import com.dashboard.models.Application;
+import com.dashboard.models.EurekaClientsMetadata;
+import com.dashboard.repositories.ElasticRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.KStreamBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 @SpringBootApplication
@@ -19,6 +28,12 @@ public class KafkaStreamsEurekaClientsArrangementApplication implements CommandL
     public static void main(String[] args) {
         SpringApplication.run(KafkaStreamsEurekaClientsArrangementApplication.class, args);
     }
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Autowired
+    private ElasticRepository elasticRepository;
 
     @Value("${kafka.topic.consume}")
     private String kafkaTopicConsume;
@@ -34,7 +49,6 @@ public class KafkaStreamsEurekaClientsArrangementApplication implements CommandL
 
     @Value("${bootstrap.server.config}")
     private String bootstrapServerConfig;
-
 
 
     @Override
@@ -57,8 +71,7 @@ public class KafkaStreamsEurekaClientsArrangementApplication implements CommandL
         KStream<String, String> kStream = builder.stream(kafkaTopicConsume);
 
         KStream<String, String> kStreamProcessor = kStream
-                .mapValues(value -> affiche(value))
-                ;
+                .mapValues(value -> process(value));
 
         kStreamProcessor.to(kafkaTopicSend);
 
@@ -73,11 +86,25 @@ public class KafkaStreamsEurekaClientsArrangementApplication implements CommandL
         Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
     }
 
-    private String affiche(String st) {
-        if (!st.equals(""))
+    private String process(String st) {
+        if (!st.equals("")) {
             System.out.println("\n*******************\n" + st + "\n*******************\n");
-        else
+
+            try {
+
+                EurekaClientsMetadata eurekaClientsMetadata =objectMapper.readValue(st.substring(1, st.length() - 1).replace("\\", ""),EurekaClientsMetadata.class);
+
+                elasticRepository.saveAll(EurekaClientsMetadataMapper.mapToEntities(eurekaClientsMetadata.getApplications()));
+
+                System.out.println("\n*******************\n" + eurekaClientsMetadata.getApplications().getApplication().get(0).getName() + "\n*******************\n");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        } else
             System.out.println("\n******************* value is empty *******************\n");
+
         return st;
     }
 }
