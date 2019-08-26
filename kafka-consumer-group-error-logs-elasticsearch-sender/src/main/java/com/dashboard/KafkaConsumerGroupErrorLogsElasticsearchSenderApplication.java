@@ -17,10 +17,10 @@ import java.time.Duration;
 import java.util.Arrays;
 
 @SpringBootApplication
-public class KafkaConsumerElasticsearchSenderApplication implements CommandLineRunner {
+public class KafkaConsumerGroupErrorLogsElasticsearchSenderApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkaConsumerElasticsearchSenderApplication.class, args);
+        SpringApplication.run(KafkaConsumerGroupErrorLogsElasticsearchSenderApplication.class, args);
     }
 
     @Autowired

@@ -1,12 +1,18 @@
 package com.dashboard;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EurekaMetadataInstanceToKafkaProducerApplication {
+public class EurekaMetadataInstanceToKafkaProducerApplication implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(EurekaMetadataInstanceToKafkaProducerApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
     }
 }

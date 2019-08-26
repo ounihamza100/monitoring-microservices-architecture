@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dashboard</groupId>
-	<artifactId>kafka-consumer-elasticsearch-sender</artifactId>
+	<artifactId>kafka-consumer-group-error-logs-elasticsearch-sender</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kafka-consumer-elasticsearch-sender</name>
+	<name>kafka-consumer-group-error-logs-elasticsearch-sender</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

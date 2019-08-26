@@ -13,6 +13,7 @@ public class Record {
 
     @JsonProperty("value")
     private String value;
+
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 

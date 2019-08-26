@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.dashboard</groupId>
-	<artifactId>real-time-kafka-streams-email-sender</artifactId>
+	<artifactId>kafka-streams-custom-error-logs-email-sender</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>real-time-kafka-streams-email-sender</name>
+	<name>kafka-streams-custom-error-logs-email-sender</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
