@@ -14,7 +14,7 @@
     <module>eureka-metadata-instance-to-kafka-producer</module>
     <module>kafka-consumer-group-error-logs-elasticsearch-sender</module>
     <module>kafka-streams-custom-error-logs-email-sender</module>
-    <module>kafka-streams-eureka-clients-metadata-arrangement</module>
+    <module>kafka-consumer-producer-eureka-clients-metadata-arrangement</module>
 </modules>
 
 </project>
