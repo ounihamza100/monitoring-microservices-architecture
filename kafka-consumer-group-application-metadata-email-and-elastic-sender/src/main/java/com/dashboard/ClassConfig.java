@@ -7,12 +7,14 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Properties;
 
+/**
+ * Created by haithem.ben-chaaben on 29/03/2019.
+ */
 @Configuration
-public class ClassConfiguration {
+public class ClassConfig {
 
     @Value("${application.id.config}")
     private String applicationIdConfig;
@@ -33,11 +35,10 @@ public class ClassConfiguration {
         return properties;
     }
 
-    @Bean
+    @Bean(name = "kafkaConsumer")
     public KafkaConsumer<String, String> kafkaConsumer() {
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties());
-
         return consumer;
     }
 
@@ -45,10 +46,4 @@ public class ClassConfiguration {
     public ObjectMapper mapper() {
         return new ObjectMapper();
     }
-
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
-
 }
