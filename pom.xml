@@ -7,6 +7,7 @@
     <groupId>com.dashboard</groupId>
     <artifactId>monitoring-microservices-architecture</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 <modules>
     <module>eureka</module>
     <module>zull</module>
@@ -14,7 +15,6 @@
     <module>eureka-metadata-instance-to-kafka-producer</module>
     <module>kafka-consumer-group-error-logs-elasticsearch-sender</module>
     <module>kafka-streams-custom-error-logs-email-sender</module>
-    <module>kafka-consumer-producer-eureka-clients-metadata-arrangement</module>
     <module>kafka-consumer-group-application-metadata-email-and-elastic-sender</module>
 </modules>
 
