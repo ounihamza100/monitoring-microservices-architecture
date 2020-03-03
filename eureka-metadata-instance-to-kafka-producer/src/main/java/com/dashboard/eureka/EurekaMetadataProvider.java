@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Created by haithem.ben-chaaben on 8/25/2019.
+ * Hamza.Ouni
  */
 @Component
 public class EurekaMetadataProvider {

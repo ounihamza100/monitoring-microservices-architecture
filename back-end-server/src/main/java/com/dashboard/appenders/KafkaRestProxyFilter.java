@@ -6,7 +6,7 @@ import ch.qos.logback.core.filter.Filter;
 import ch.qos.logback.core.spi.FilterReply;
 
 /**
- * Created by haithem.ben-chaaben on 30/04/2019.
+ * Hamza.Ouni
  */
 public class KafkaRestProxyFilter extends Filter<ILoggingEvent> {
 

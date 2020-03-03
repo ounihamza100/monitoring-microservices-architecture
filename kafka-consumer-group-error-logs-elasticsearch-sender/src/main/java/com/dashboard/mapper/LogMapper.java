@@ -7,7 +7,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 
 /**
- * Created by haithem.ben-chaaben on 29/03/2019.
+ * Hamza.Ouni
  */
 public class LogMapper {
     public static LogModelToElastic modelToElastic(LogModel model) {

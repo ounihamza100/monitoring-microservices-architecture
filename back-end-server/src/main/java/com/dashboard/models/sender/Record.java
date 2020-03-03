@@ -1,7 +1,7 @@
 package com.dashboard.models.sender;
 
 /**
- * Created by haithem.ben-chaaben on 01/03/2019.
+ * Hamza.Ouni
  */
 
 import com.fasterxml.jackson.annotation.*;

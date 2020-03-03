@@ -6,7 +6,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by haithem.ben-chaaben on 8/14/2019.
+ * Hamza.Ouni
  */
 @Component
 public class EmailSenderTemplate {

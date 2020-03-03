@@ -1,7 +1,7 @@
 package com.dashboard.service;
 
 /**
- * Created by haithem.ben-chaaben on 8/14/2019.
+ * Hamza.Ouni
  */
 public interface EmailSenderService {
 

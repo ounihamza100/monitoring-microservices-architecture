@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 /**
- * Created by haithem.ben-chaaben on 8/14/2019.
+ * Hamza.Ouni
  */
 @Service
 public class EmailSenderServiceImpl implements EmailSenderService {

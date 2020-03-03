@@ -3,7 +3,7 @@ package com.dashboard.model;
 import lombok.*;
 
 /**
- * Created by haithem.ben-chaaben on 13/03/2019.
+ * Hamza.Ouni
  */
 @Builder
 @AllArgsConstructor

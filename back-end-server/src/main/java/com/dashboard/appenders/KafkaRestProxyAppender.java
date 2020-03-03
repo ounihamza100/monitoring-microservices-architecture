@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Created by haithem.ben-chaaben on 14/02/2019.
+ * Hamza.Ouni
  */
 public class KafkaRestProxyAppender extends AppenderBase<ILoggingEvent> {
 

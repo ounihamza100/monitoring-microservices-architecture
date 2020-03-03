@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.SimpleMailMessage;
 
 /**
- * Created by haithem.ben-chaaben on 8/14/2019.
+ * Hamza.Ouni
  */
 @Configuration
 public class ClassConfig {

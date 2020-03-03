@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
- * Created by haithem.ben-chaaben on 29/03/2019.
+ * Hamza.Ouni
  */
 @Builder
 @AllArgsConstructor
